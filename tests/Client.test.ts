@@ -18,11 +18,22 @@ describe("Test client module", () => {
     };
 
   test("test get availables hotels", async () => {
-    const hotels = client.get(params).then((resp) => {
+    const hotels = await client.get(params).then((resp) => {
       return resp;
     });
 
-    expect(typeof (await hotels).count).toBe("number");
-    expect(typeof (await hotels).hotels).toBe("object");
+    expect(typeof hotels.count).toBe("number");
+    expect(typeof hotels.hotels).toBe("object");
+  });
+
+  test("test get availables hotel by id", async () => {
+    params.hotelIDs = "343673";
+
+    const hotels = await client.get(params).then((resp) => {
+      return resp;
+    });
+
+    expect(typeof hotels.count).toBe("number");
+    expect(typeof hotels.hotels).toBe("object");
   });
 });

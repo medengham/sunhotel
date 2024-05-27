@@ -6,7 +6,7 @@ import { Parameters } from "./types";
 /**
  * Client class to initialize the api and use all methods of hotel api
  * @module Client
- * @author mehdi Ait Mouh <aitmouh.mehdi.dev@gmail.com>
+ * @author Mehdi Ait Mouh <aitmouh.mehdi.dev@gmail.com>
  * @version 1.1.2
  */
 
@@ -35,9 +35,9 @@ export class Client {
    *
    * @param {Parameters} params search query.
    *
-   * @returns {Promise<{count: any, hotels: any}>} Promise contain count result and list of hotels
+   * @returns {Promise<{count: number, hotels: any}>} Promise contain count result and list of hotels
    */
-  public async get({}: Parameters) {
+  public async get({}: Parameters): Promise<{ count: number; hotels: any }> {
     const params = new URLSearchParams(arguments[0]);
     params.set("userName", this.userName);
     params.set("password", this.password);
