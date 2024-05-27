@@ -1,0 +1,39 @@
+{
+  "name": "sunhotel",
+  "version": "1.1.2",
+  "description": "Simplifies interaction with the Sunhotels API, allowing developers to easily search for hotels, retrieve booking information, and manage bookings programmatically.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/medengham/sunhotel.git"
+  },
+  "keywords": [
+    "Sunhotels",
+    "Hotels",
+    "Hotel booking",
+    "booking"
+  ],
+  "author": "Mehdi Ait Mouh <aitmouh.mehdi.dev@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/medengham/sunhotel/issues"
+  },
+  "homepage": "https://github.com/medengham/sunhotel#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.24.5",
+    "@babel/preset-typescript": "^7.24.1",
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^4.4.0"
+  }
+}
