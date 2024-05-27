@@ -2,6 +2,7 @@
 
 import { XMLParser } from "fast-xml-parser";
 import { Parameters } from "./types";
+import { Helper } from "./Helper";
 
 /**
  * Client class to initialize the api and use all methods of hotel api
@@ -22,12 +23,18 @@ export class Client {
   protected password: string;
 
   /**
+   * @type {Helper}
+   */
+  public helper: Helper;
+
+  /**
    * @param {string} userName Username given from api service provider.
    * @param {string} password Password given from api service provider.
    */
   constructor(userName: string, password: string) {
     this.userName = userName;
     this.password = password;
+    this.helper = new Helper(userName, password);
   }
 
   /**
