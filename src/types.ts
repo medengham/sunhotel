@@ -50,7 +50,7 @@ export type PreBook = {
   showPriceBreakdown: string;
   B2C: string;
 };
-type Book = {
+export type Book = {
   currency: string;
   language: string;
   email: string;
