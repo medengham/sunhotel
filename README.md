@@ -229,8 +229,9 @@ client.order.preBook({
   searchPrice: 38,
   checkInDate: "2024-06-01",
   checkOutDate: "2024-06-02",
-  email: "mehdi.aitmouh.dev@gmail.com",
+  email: "aitmouh.mehdi.dev@gmail.com",
   rooms: 1,
+  specialrequest: "",
   yourRef: "ZERF7832",
   roomId: "176936782",
   mealId: "3",
@@ -275,7 +276,7 @@ const params: Book = {
   language: "en",
   checkInDate: "2024-06-01",
   checkOutDate: "2024-06-02",
-  email: "mehdi.aitmouh.dev@gmail.com",
+  email: "aitmouh.mehdi.dev@gmail.com",
   rooms: "1",
   roomId: "176936782",
   mealId: "3",
@@ -287,7 +288,7 @@ const params: Book = {
   specialrequest: "",
   yourRef: "DERF89",
   preBookCode: "84838394f-3324-439-a132-50592450997f",
-  customerEmail: "mehdi.aitmouh.dev@gmail.com",
+  customerEmail: "aitmouh.mehdi.dev@gmail.com",
   paymentMethodId: "1",
   creditCardType: "",
   creditCardNumber: "",
@@ -438,4 +439,4 @@ client.order.cancel("order_id", "lang").then((resp) => {
 
 ## Contributors :
 
-Mehdi Ait Mouh <mehdi.aitmouh.dev@gmail.com> (software engineer)
+Mehdi Ait Mouh <aitmouh.mehdi.dev@gmail.com> (software engineer)
