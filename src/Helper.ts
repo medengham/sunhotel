@@ -229,4 +229,38 @@ export class Helper {
         throw new Error(reason);
       });
   }
+
+  /**
+   * Get room types
+   *
+   * @param {lang} lang
+   *
+   * @returns {Promise<{ count: number; roomTypes: any }>} Promise contain object of room types
+   */
+  public async roomTypes(
+    lang: string
+  ): Promise<{ count: number; roomTypes: any }> {
+    this.params.set("language", lang);
+    return fetch(
+      `https://xml.sunhotels.net/15/PostGet/NonStaticXMLAPI.asmx/GetRoomTypes?${this.params.toString()}`
+    )
+      .then((response) => {
+        return response.text();
+      })
+      .then((xml) => {
+        return new XMLParser().parse(xml);
+      })
+      .then((data) => {
+        if (data.getRoomTypesResult.hasOwnProperty("Error")) {
+          throw new Error(data.getRoomTypesResult.Error.Message);
+        }
+        return {
+          count: data.getRoomTypesResult.roomTypes.roomType.length,
+          roomTypes: data.getRoomTypesResult.roomTypes.roomType,
+        };
+      })
+      .catch((reason) => {
+        throw new Error(reason);
+      });
+  }
 }

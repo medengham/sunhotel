@@ -31,4 +31,11 @@ describe("Test helper module", () => {
     expect(typeof destinations.count).toBe("number");
     expect(typeof destinations.destinations).toBe("object");
   });
+
+  test("test get room types", async () => {
+    const roomTypes = await client.helper.roomTypes("en");
+
+    expect(typeof roomTypes.count).toBe("number");
+    expect(typeof roomTypes.roomTypes).toBe("object");
+  });
 });
