@@ -31,7 +31,7 @@ export class Client {
   /**
    * @type {Order}
    */
-    public order: Order;
+  public order: Order;
 
   /**
    * @param {string} userName Username given from api service provider.
@@ -70,6 +70,9 @@ export class Client {
       .then((data) => {
         if (data.hasOwnProperty("SearchResponse")) {
           throw new Error(data.SearchResponse.ReturnStatus.Exception);
+        }
+        if (data.searchresult.hasOwnProperty("Error")) {
+          throw new Error(data.searchresult.Error.Message);
         }
         let hotels = data.hasOwnProperty("searchresult")
           ? data.searchresult.hotels != ""
